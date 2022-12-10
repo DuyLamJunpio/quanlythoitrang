@@ -23,6 +23,7 @@ import java.util.List;
 
 import lam.fpoly.shopthoitrang.AccFragment.DangNhapActivity;
 import lam.fpoly.shopthoitrang.ActivityDatHang.HoaDonChiTiet;
+import lam.fpoly.shopthoitrang.Adapter.FbAdapter;
 import lam.fpoly.shopthoitrang.Adapter.FeedBackAdapter;
 import lam.fpoly.shopthoitrang.Dao.TbFeedBackDao;
 import lam.fpoly.shopthoitrang.Dao.TbGioHangDao;
@@ -43,9 +44,9 @@ public class Activity_ThongTinSP extends AppCompatActivity {
     TbSanPham tbSanPham;
     TbSaleSPDao tbSaleSPDao;
     TbFeedBackDao tbFeedBackDao;
-    ListView rsv_fb;
+    RecyclerView rsv_fb;
     List<TbFeedBack> listFb;
-    FeedBackAdapter feedBackAdapter;
+    FbAdapter adapter;
     public static boolean checkSale = false;
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -64,9 +65,14 @@ public class Activity_ThongTinSP extends AppCompatActivity {
         listFb = new ArrayList<>();
         tbFeedBackDao = new TbFeedBackDao();
         listFb = tbFeedBackDao.getAll(idSP);
-        feedBackAdapter = new FeedBackAdapter(this,listFb);
+
+        adapter = new FbAdapter();
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        rsv_fb.setLayoutManager(manager);
+        adapter.setData(listFb);
+        rsv_fb.setAdapter(adapter);
+
         Log.i("TAG", "activity: "+listFb.size());
-        rsv_fb.setAdapter(feedBackAdapter);
         imgBack_CT = findViewById(R.id.imgBack_CT);
         imgBack_CT.setOnClickListener(new View.OnClickListener() {
             @Override

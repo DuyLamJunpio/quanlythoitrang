@@ -57,12 +57,30 @@ public class DonMua_Fragment extends Fragment {
 
     private void loadData() {
         TbDonHangDao tbDonHangDao = new TbDonHangDao();
-        list = tbDonHangDao.getTrangThai("Chờ xác nhận", DangNhapActivity.ID);
-        donMuaAdapter.setData(list);
-        System.out.println(list.size());
-//        switch (stt){
-//            case 1:
-//                break;
-//        }
+        switch (stt){
+            case 1:
+                list = tbDonHangDao.getTrangThai("Chờ xác nhận", DangNhapActivity.ID);
+                donMuaAdapter.setData(list);
+                break;
+            case 2:
+                list = tbDonHangDao.getTrangThai("Chờ lấy hàng", DangNhapActivity.ID);
+                donMuaAdapter.setData(list);
+                break;
+            case 3:
+                list = tbDonHangDao.getTrangThai("Đang giao", DangNhapActivity.ID);
+                donMuaAdapter.setData(list);
+                break;
+            case 4:
+                list = tbDonHangDao.getTrangThai("Đã giao", DangNhapActivity.ID);
+                donMuaAdapter.setData(list);
+                break;
+            case 5:
+
+                break;
+            default:
+                list = tbDonHangDao.getTrangThai("Chờ xác nhận", DangNhapActivity.ID);
+                donMuaAdapter.setData(list);
+                break;
+        }
     }
 }
