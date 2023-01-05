@@ -51,6 +51,18 @@ public class MainActivity extends AppCompatActivity {
         downloadDanhMucLocal();
         bottomNav = findViewById(R.id.bottomNav);
         frame = R.id.flFragment;
+
+        //HomeFragment to Acc
+        Intent intent2 = getIntent();
+        int toAcc2 = intent2.getIntExtra("HOME",1);
+        mainToAcc(toAcc2);
+
+        //Main to acc
+        Intent intent = getIntent();
+        int toAcc = intent.getIntExtra("DONMUA",1);
+        mainToAcc(toAcc);
+
+
         //dang nhap to main
         if(checkLogin){
             replaceFragment(new ThongTinFragment());
@@ -188,5 +200,13 @@ public class MainActivity extends AppCompatActivity {
 //    ObjectAnimator anim = ObjectAnimator.ofFloat(imgLogo,"translationY",0,-1000f);
 //        anim.setDuration(1500);
 //        anim.start();
+
+    private void mainToAcc(int acc){
+        if(acc == ID_ACC){
+            replaceFragment(new ThongTinFragment());
+        }else{
+            replaceFragment(new Home_Fragment());
+        }
+    }
 
 }

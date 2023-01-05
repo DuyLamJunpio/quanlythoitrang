@@ -22,6 +22,7 @@ import java.util.Calendar;
 
 import lam.fpoly.shopthoitrang.AccFragment.DangNhapActivity;
 import lam.fpoly.shopthoitrang.Dao.TbLogoDao;
+import lam.fpoly.shopthoitrang.Fragment.ThongTinFragment;
 import lam.fpoly.shopthoitrang.FragmentViewPager.Create_Fragment;
 import lam.fpoly.shopthoitrang.MainActivity;
 import lam.fpoly.shopthoitrang.Model.TbLogo;
@@ -45,6 +46,7 @@ public class manhinhcho extends AppCompatActivity {
         manhinhchao=findViewById(R.id.manhinhchao);
         loadingmanhinhchao=findViewById(R.id.loadingmanhinhchao);
         loadingmanhinhchao.startAnimation(AnimationUtils.loadAnimation(this,R.anim.loading_plane));
+
         new Thread(new Runnable() {
             @Override
             public void run() {

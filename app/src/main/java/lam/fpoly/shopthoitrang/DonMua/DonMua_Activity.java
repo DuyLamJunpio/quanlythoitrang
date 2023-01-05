@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -14,6 +16,7 @@ import lam.fpoly.shopthoitrang.Adapter.ViewPagerAdapter;
 import lam.fpoly.shopthoitrang.Adapter.ViewPagerAdapterDonMua;
 import lam.fpoly.shopthoitrang.DonMua.Fragment.DonMua_Fragment;
 import lam.fpoly.shopthoitrang.FragmentViewPager.Create_Fragment;
+import lam.fpoly.shopthoitrang.MainActivity;
 import lam.fpoly.shopthoitrang.MyDataBase.MyDataBase_DM;
 import lam.fpoly.shopthoitrang.R;
 
@@ -56,4 +59,11 @@ public class DonMua_Activity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("DONMUA",4);
+        startActivity(intent);
+    }
 }

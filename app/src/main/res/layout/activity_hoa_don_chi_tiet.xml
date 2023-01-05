@@ -137,7 +137,7 @@
                         android:id="@+id/tvTongTienHang_HDCT"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="199000 $"
+                        android:text="133.000đ"
                         android:textColor="#FF8D85"
                         android:textStyle="bold"
                         android:textSize="18dp"/>
@@ -222,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:fontFamily="@font/noto_sans"
-                        android:text="1.000.000 đ"
+                        android:text="133.000 đ"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="18dp" />
@@ -280,7 +280,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:fontFamily="@font/noto_sans"
-                        android:text="- 100.000 đ"
+                        android:text="- 0 đ"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="18dp" />
@@ -329,7 +329,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:fontFamily="@font/noto_sans_bold"
-                android:text="950.000 đ"
+                android:text="183.000 đ"
                 android:textColor="@color/red"
                 android:textSize="18dp" />
 
